@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>News Aggregator</h1>
+      <h1>NEWZILLA</h1>
       <div style={{ marginBottom: 20 }}>
         {categories.map((cat) => (
           <button
