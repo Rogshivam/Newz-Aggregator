@@ -4,7 +4,19 @@
   padding: 2rem;
   text-align: center;
 }
-
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  .categoryBarStyle {
+    justify-content: center; /* center buttons on larger screens */
+    overflow-x: visible; /* no scroll */
+    padding-left: 0; /* remove padding on desktop */
+  }
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +51,18 @@
 
 .read-the-docs {
   color: #888;
+}
+.category-bar {
+  justify-content: flex-start; /* mobile default: left aligned, scrollable */
+  overflow-x: auto;
+  padding-left: 8px; /* prevent first button cutoff */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+}
+
+@media (min-width: 768px) {
+  .category-bar {
+    justify-content: center; /* center buttons on larger screens */
+    overflow-x: visible; /* no scroll */
+    padding-left: 0; /* remove padding on desktop */
+  }
 }
