@@ -38,25 +38,39 @@ function App() {
   return (
     <div className="App">
       <h1>NEWZILLA</h1>
-      <div style={{ marginBottom: 20 }}>
+      <div
+        style={{
+          marginBottom: 20,
+          display: "flex",
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          paddingBottom: 4,
+          WebkitOverflowScrolling: "touch", // smooth on iOS
+          alignItems: 'center'
+        }}
+      >
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setCategory(cat)}
             style={{
               marginRight: 8,
-              background: cat === category ? '#007bff' : '#eee',
-              color: cat === category ? '#fff' : '#000',
-              border: 'none',
-              padding: '8px 16px',
+              background: cat === category ? "#007bff" : "#eee",
+              color: cat === category ? "#fff" : "#000",
+              border: "none",
+              padding: "8px 16px",
               borderRadius: 4,
-              cursor: 'pointer',
+              cursor: "pointer",
+              flex: "0 0 auto", // keeps size consistent for scroll
+              whiteSpace: "nowrap", // text stays in one line
+              justifyContent: "center"
             }}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
           </button>
         ))}
       </div>
+
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div>
